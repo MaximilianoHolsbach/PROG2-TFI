@@ -11,6 +11,7 @@ import java.time.LocalDate;
  * @author Maxi
  */
 public class Paciente {
+    private static Long contador; 
     private Long id;
     private boolean eliminado;
     private String nombre;
@@ -19,30 +20,33 @@ public class Paciente {
     private LocalDate fechaNacimiento;
     private HistoriaClinica historiaClinica;
     
+    //Constructores
     public Paciente(){
+        contador++;
+        this.id = contador;
     }
 
-    public Paciente(Long id, boolean eliminado, String nombre, String apellido, String dni, LocalDate fechaNacimiento, HistoriaClinica historiaClinica) {
-        this.id = id;
-        this.eliminado = eliminado;
+    public Paciente(int eliminado, String nombre, String apellido, String dni, LocalDate fechaNacimiento, HistoriaClinica historiaClinica) {
+        contador++;
+        this.id = contador;
+        this.eliminado = eliminarPaciente(eliminado);
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
         this.fechaNacimiento = fechaNacimiento;
         this.historiaClinica = historiaClinica;
     }
-
+    
+    //Metodos
     public Long getId() {
         return id;
     }
 
-    public boolean isEliminado() {
+    public boolean eliminarPaciente(int eliminar) {
+        boolean eliminado = eliminar == 1 ? true : false;
         return eliminado;
     }
-
-    public void setEliminado(boolean eliminado) {
-        this.eliminado = eliminado;
-    }
+    
 
     public String getNombre() {
         return nombre;
