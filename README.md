@@ -1,2 +1,9 @@
-# PROG2-TFI
-Trabajo Final Integrador (TFI)
+# Trabajo Final Integrador (TFI)
+
+## Dominio seleccionado
+  Paciente → HistoriaClinica
+
+## Diagrama UML de clases
+
+
+
